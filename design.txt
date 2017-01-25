@@ -1,0 +1,43 @@
+I initially wanted to create an app, but I decided honing skills I already have a little of would be better for this project than
+learning something brand new. Therefore, I decided to make a website. I used bootstrap for the front end frame work, flask and python 
+for the routes, and phpliteadmin as my database. The website is supposed to be an introduction to the app I will create in the future.
+It gives info about the the idea behind the app and lets you test a web version.
+
+Bootstrap took care of most of the styling. All I needed to do was look at the documentation and use the set classes. I have a layout(1) 
+with the carousel that the main page uses, and a layout(2) without the carousel that everything else uses. The carousel seemed like a bit
+much to use on every page. One issue I had was spacing. I created my own custom css with a class that would give spacing on top. It was
+very strange because sometimes this css would load and sometimes it wouldn't (without me changing anything else). For now, I have rows
+with <br> in a few locations that will be replaced with css classes in the future. I messed around a lot with the best way to organize
+the information I had to make it easy to follow and aesthetically appealing. Hopefully, I did a decent job of that.
+
+To allow users to create and see their to-dos/goals, I decided to use a database, similar to how we used a databse in CS50 Finance. I 
+have four tables, one for users, one for tasks, one for goals, and one for implementation intentions.
+The tasks and goals tables are linked to the users table (users.id = tasks/goals.u_id) and the ii table is linked to the goals table
+(ii.g_id = goals.id). The user table stores id, username, and hash_password. The tasks table stores id, u_id, completed, and what, when,
+where, and how. The last four columns are stored to be displayed back to the user, reminding them of the plan they created. Completed is 
+there to help remove completed tasks (addressed below). The goals table stores id, u_id, Goal, and completed. The ii table stores id,
+g_id, obstacle, and response. Implementation intentions are 'if obstacle then response' plans that are linked to specific goals. If 
+this doesn't make  the most sense, reading the info on the website should clear things up. I don't want to summarize all of the research
+I have done on psychology concept in a design document.
+
+Storing and retrieving tasks was relatively straightforward - I stored tasks into tasks and then queried from tasks
+where u_id = session["user_id"], returning all of the current user's tasks. I could then display these tasks in a table for the user. 
+Storing and retrieving goals and their accomapnying ii's was a bit more difficult. Although having one table for this would have been
+easier, I decided to use two tables because it would be better design since one goal can have many ii's, and I did not want to store 
+the same goal several times.  I tried using a SQL query with JOIN, but the resulting list of dicts was not useful to pass into Jinja.
+Ultimately, I found a solution using two queries and  appending a dict to a list of dicts and using nested for loops in Jinja. It 
+sounds a bit messy, but was quite the elegant solutionin my opinion. When I returned the user's tasks and goals in the table, I also 
+show them a statement in a general format. For tasks, it is a simple actionable statement. For goals, it is an if-then statement. I did
+not havethe time to figure out how to run language analysis on the plans, so I decided to make these statements editable if the user 
+wants to fix the grammar since often times tense or agreement will be slightly off. 
+
+I also needed a way to remove completed tasks/goals. I did this by using a checkbox with an onchange listener. On change, the textbox 
+would call an update javascript function. The update javascript function would send a JSON request with parameters about the state of 
+the checkbox to the update route, and the update route would take the parameters of the JSON function to update the database. I had a 
+Completed column in the tasks and goals tables to be updated. If the checkbox was checked, the completed column would be set to true. 
+If the checkbox was not checked, the completed column would be set to false.Then, when the user hits the remove button, the database 
+should be fully  updated and I can delete any task/goal where Completed = True. I am not sure if this is the best way to do it, but it 
+made sense to me. I also have a setFalse function to call onload. This keeps the database and the checkboxes in sync. Everytime I 
+refresh the page, the checkboxes automatically uncheck, meaning I needed a way to make the Completed column in my tables false as well.
+The setFalse functionsends a JSON request to the onload python route, which sets 'Completed' of all of the current users goals and 
+tasks to false.

@@ -1,0 +1,53 @@
+Files/Programs Used:
+    - finalproject directory 
+    - Flask
+    - developed and tested on CS50 IDE
+    - used phpliteadmin for database
+    
+finalproject directory
+    - static directory
+        - css directory: css files located here, downloaded 3 css files from bootstrap, 1 custom css file
+        - font-awesome directory: downloaded from bootstrap
+        - fonts directory: downloaded from bootstrap
+        - js directory: javascript files downloaded from bootstrao
+        - scripts.js separate because I could not find the syntax for nested directories for url_for
+        - pics directory: pictures used in website
+    - templates directory: html templates located here
+    - application.py
+        - configure flask app and database
+        - flask routes located here
+    - helpers.py
+        - helper functions for application.py
+    - finalproject.db - four tables in database
+        1.users
+        2.tasks
+        3.goals
+        4.ii (implementation intention - fancy way of saying if-then plan)
+        -ii (g_id) linked to goals (id)
+        -goals and tasks (u_id) linked to users (id)
+        
+Overview of website:
+    - the website introduces you to a new method that will help you be productive. You get lots of info about the method - how to use
+    it, how effective it is, etc... After registering and logging in, you can try the method for yourself by following the instructions
+    and entering your to-dos/goals.
+
+How to use the website:
+    1. To get to the website, cd into finalproject and run flask 
+    2. The home page is an introduction, you can go several different ways
+        - you can learn more about to-dos vs goals with the first two links
+        - three pictures/descriptions take you to different pages with more info about their respective topics
+        - try now section, will redirect you to login/register before you can actually create goals/todos
+        - download app now - only there for appearance at the moment, app does not exist... yet
+    3. Upper nav-bar
+        - DONE in the upper left takes you back to home page
+        - about takes you to three info pages (same pages as big pictures)
+        - try now allows you to register and log in
+    4. Once you register and log in, you can create to-dos and goals under create in the upper nav-bar.
+    5. For instructions on how to create to-dos/goals, see the first two links on the home page or the links when you hit
+        create todo/goal.
+    6. You can view your to-dos and goals under view in the upper nav-bar. This will bring you to a table of your to-dos/goals.
+    7. You can remove to-dos and goals once you have finished them by checking them and then clicking remove.
+    8. You can edit the plans in the table if the grammar is not perfect - I did not have time to run language anlysis. Next step is 
+        to be able to save the changes. If this doesn't make the most sense now, once you create a plan and see the table, it will.
+    
+        

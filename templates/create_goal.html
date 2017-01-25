@@ -1,0 +1,59 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Create Goal
+{% endblock %}
+
+{% block main %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Create Goal
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="active">Create Goal</li>
+                </ol>
+            </div>
+        </div>
+     
+    
+    <div class="row top-buffer">
+        <div class=col-md-6>
+            <a href="{{ url_for('goal_questions') }}"><h4><b>Instructions and FAQ </b></h4></a>
+            <img class="center-block" src="/static/pics/finish.jpg" style="width: 90%; height: auto">
+        </div>
+        
+        <div class=col-md-6>
+            <form action="{{ url_for('create_goal') }}" method="post">
+                <fieldset>
+                    <div class="form-group">
+                        <input class="form-control" name="goal" placeholder="Enter your goal here" type="text"/>
+                    </div>
+                     <div class="form-group">
+                        <input class="form-control" name="obs1" placeholder="1. What will be a likely obstacle or distraction?" type="text"/>
+                    </div>
+                     <div class="form-group">
+                        <input class="form-control" name="res1" placeholder="1. What will you do to overcome this obstacle?" type="text"/>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="obs2" placeholder="2. What will be a likely obstacle or distraction?" type="text"/>
+                    </div>
+                     <div class="form-group">
+                        <input class="form-control" name="res2" placeholder="2. What will you do to overcome this obstacle?" type="text"/>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default" type="submit">Create</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    
+    </div>
+
+
+{% endblock %}

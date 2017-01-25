@@ -1,0 +1,42 @@
+ {% extends "layout2.html" %}
+
+{% block title %}
+    Benefits
+{% endblock %}
+
+{% block main %}
+
+ <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Longterm Benefits
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="active">Longterm Benefits</li>
+                </ol>
+            </div>
+        </div>
+
+
+        <!-- Page Text -->
+        <div class="row">
+            <div class="col-md-12" >
+                <a href="{{ url_for('effectiveness') }}"><h4 class="text-center">Not only will you see results using DONE. immediately </h4></a>
+                <h2 class="text-center">As you use DONE. it becomes more and more effective</h2>
+            </div>
+        </div>
+        
+        <div class="row top-buffer">
+            <img class="center-block" src="/static/pics/why.jpeg">
+            <h4 class="text-center"> Oftentimes, the hardest part of finishing something is getting started. </h4>
+            <h4 class="text-center">As you use DONE. the process of getting started will become more and more automatic.</h4>
+        </div>
+    
+    </div>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Effectiveness
+{% endblock %}
+
+{% block main %}
+
+<!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Effectiveness of DONE.
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="active">Effectiveness</li>
+                </ol>
+            </div>
+        </div>
+    
+        <div class="row">   
+            <div class="col-md-8">
+                <h4> A few examples of short term and long term tasks: </h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th> </th>
+                        <th colspan="2" align="center"> Success Rate </th>
+                    </tr>
+                        <tr> 
+                            <th>Task</th>
+                            <th>Not using methods in DONE.</th> 
+                            <th>Using methods in DONE.</th>
+                        </tr>
+                        <tr>
+                            <td>Vigorously exercise at least once a week</td>
+                            <td>39%</td> 
+                            <td>91%</td>
+                        </tr>
+                        <tr>
+                            <td>Breast cancer self exam</td>
+                            <td>53%</td> 
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td>Write a report over winter break</td>
+                            <td>33%</td> 
+                            <td>75%</td>
+                        </tr>
+                        </table>
+                
+                <br>
+
+                <p class="top-buffer"> This data is from formal studies done by professional researchers. Click <a href = "http://www.psych.nyu.edu/gollwitzer/99Goll_ImpInt.pdf"> here </a> for the published research report.</p>
+            </div>
+        
+        <div class="col-md-4 text-center">
+            <div class="thumbnail">
+                <img class="img-responsive" src="http://placehold.it/350x150" alt="">
+                <div class="caption">
+                    <h3>John Smith<br>
+                        <small>Testimonial to come</small>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+            
+            
+            
+       
+        
+  
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+    
+{% endblock %}

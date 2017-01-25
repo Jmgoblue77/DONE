@@ -1,0 +1,54 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Create Task
+{% endblock %}
+
+{% block main %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Create To-do
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="active">Create To-do</li>
+                </ol>
+            </div>
+        </div>
+    
+        <div class="row top-buffer">
+            <div class="col-md-6">
+                <a href="{{ url_for('todo_questions') }}"><h4><b>Instructions and FAQ </b></h4></a>
+                <img class="center-block top-buffer" src="/static/pics/checklist.jpg" style="width: 70%; height: auto">
+            </div>
+            
+            <div class ="col-md-6">          
+                <form action="{{ url_for('create_task') }}" method="post">
+                    <fieldset>
+                        <div class="form-group">
+                            <input class="form-control" name="what" placeholder="Enter your task here" type="text"/>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" name="when" placeholder="When are you going to do the task?" type="text"/>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" name="where" placeholder="Where are you going to do the task?" type="text"/>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" name="how" placeholder="How are you going to get to this place?" type="text"/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button class="btn btn-default" type="submit">Create</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

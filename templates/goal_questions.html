@@ -1,0 +1,86 @@
+ {% extends "layout2.html" %}
+
+{% block title %}
+    Goal questions
+{% endblock %}
+
+{% block main %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Create Goal Questions
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li><a href="{{ url_for('create_goal') }}">Create Goal</a>
+                    </li>
+                    <li class="active">Questions</li>
+                </ol>
+            </div>
+        </div>
+ 
+
+        <!-- Page Text -->
+        <div class="row">
+            <div class="col-md-6">
+                <h4>How do I create a goal?</h4>
+                <ol>
+                    <li> <h4><small>Enter what your goal is in the first row </small></h4> </li>
+                    <li> <h4><small>Think of what the most likely obstacles will on the way to your goal. Determine what your responses to these obstacles will be. Enter these in the next rows. </small></h4></li>
+                    <li> <h4><small>You do not need to fill out all of the obstacle response-pairs. </small></h4></li>
+                </ol>
+            </div>
+            
+            <div class="col-md-6">
+                <h4>Example</h4>
+                <ol>
+                    <li> <h4><small>Eat healthy. </small></h4> </li>
+                    <li> <h4><small>Obstacle 1: seeing a soda </small></h4></li>
+                    <li> <h4><small>Response 1: If I have not drunk a soda this week, I can have it. Otherwise, I will grab a water bottle </small></h4></li>
+                    <li> <h4><small>Obstacle 2: seeing delicious but unhealthy options on a restaurant menu </small></h4></li>
+                    <li> <h4><small>Response 2: I will order a salad. </small></h4></li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h4> Then what? </h4>
+                <ul>
+                    <li> <h4><small>Then, just follow your plan! </small></h4> </li>
+                    <li> <h4><small>You can see all your goals you have set under View in the upper navbar. </small></h4></li>
+                    <li> <h4><small>Under each goal, you will be given simple, if-then statements for what you will do if you come across the obstacle. Feel free to tweak the grammar if necessary. </small></h4></li>
+                </ul>
+                
+            </div>
+            
+            
+            <div class="col-md-6">
+                 <h4> Why does this work? </h4>
+                <ul>
+                    <li> <h4><small>Creating if-then plans for obstacles beforehand allows you to consider all options and consequences rather than choosing something spur of the moment. Having a set response to specific obstacles allows you to detect critical situations easier as well as deal with them in a productive way. </small></h4> </li>
+                    <li> <h4><small>Click <a href="{{ url_for('effectiveness') }}">here</a> to see how effective this method is. </small></h4></li>
+                    <li> <h4><small>Click <a href="http://www.psych.nyu.edu/gollwitzer/99Goll_ImpInt.pdf">here</a> if you are interested in the full report on how and why this works. </small></h4></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row">
+            
+            <div class="col-md-6">
+                <h4> What is the difference between a to-do and goal? </h4>
+                <ul>
+                    <li> <h4><small>To-dos are relatively simple tasks and short-term. Goals are more general and long-term. </small></h4> </li>
+                    <li> <h4><small> We recommend figuring out concrete, necessary to-dos that will help you achieve your goals. For example, some to-dos for the goal "get fit" could be "go to the gym twice a week" and "eat vegetables at lunch everyday" </small></h4></li>
+                </ul>
+            </div>
+        </div>  
+    
+    </div>    
+
+{% endblock %}

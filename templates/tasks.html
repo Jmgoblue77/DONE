@@ -1,0 +1,63 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    My to-dos
+{% endblock %}
+
+{% block main %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+    
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">My to-dos
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="active">My to-dos</li>
+                </ol>
+            </div>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th>Completed</th>
+                  <th>Task</th>
+                  <th>When</th> 
+                  <th>Where</th>
+                  <th>How</th>
+                </tr>
+            </thead>
+  
+            {% for task in tasks%}
+                <tr>
+                    <td><input type="checkbox" name="tasks,{{task.id}}"  onchange = "update(this)" ></td>
+                    <td>{{task.Task}}</td>
+                    <td>{{task.Time}}</td>
+                    <td>{{task.Location}}</td>
+                    <td>{{task.How}} </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td colspan="4" contenteditable="true"> <b> At {{ task.Time }}, I will {{ task.How }} to {{ task.Location }} and start {{ task.Task }} </b></td>
+                </tr>
+            {% endfor %}
+        </table>
+
+
+
+        <form action="{{ url_for('tasks') }}" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <button class="btn btn-default" type="submit">Remove completed to-dos</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+{% endblock %}
